@@ -1,8 +1,11 @@
 <div>
     <h1 class="text-pretty font-semibold text-green-800 text-3xl text-center py-2">Notes</h1>
-    <div>
-        <div class="border border-blue-800 h-36 px-2 m-2 rounded-md cursor-pointer hover:bg-slate-400 hover:text-white">
-            random text
+    <div *ngFor="let note of viewNoteList; let id = index">
+        <div class="border border-blue-800 h-36 px-2 m-2 rounded-md cursor-pointer flex-col">
+            <p class="h-[80%]"> {{note.data}}</p>
+            <button class="bg-red-500 hover:bg-red-700 text-white px-2 rounded-full mx-2 " (click)="deleteNote(id)">
+                Delete
+            </button>
         </div>
     </div>
 </div>
